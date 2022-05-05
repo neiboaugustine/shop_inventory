@@ -1,0 +1,126 @@
+:root{
+    --dark:#374151;
+    --darker: #1F2937;
+     --darkest:#111827;
+     --light: #eee;
+     --pink: #ec4899;
+     --purple: #8b56fc;
+     --grey: #6b7280;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--dark);
+    color: white;
+}
+header{
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin:0 auto;
+}
+header h1{
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+#enter-product{
+    /* display: flex; */
+    margin-top: 30px;
+}
+input, button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+.product-form{
+    flex: 1 1 0%;
+    background: var(--darker);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    color: var(--light);
+    font-size: 1.25rem;
+}
+#task-form::placeholder{
+    color: var(--grey);
+}
+#product-submit{
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-color: var(--pink);
+    border-radius: 5px;
+    margin: 1rem;
+}
+#task-submit:hover{
+    color: var(--pink);
+    background-color: white;
+    transition: 0.6s;
+}
+main{
+    flex: 1 1 0%;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+.product-list{
+    padding: 1rem;
+}
+.product-list h2{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--grey);
+    margin-bottom: 1rem;
+}
+#product .product{
+    /* display: flex; */
+    justify-content: space-between;
+    background-color: var(--darkest);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+#product .product .content{
+    flex: 1 1 0%;
+    margin-top: 1rem;
+}
+#product .product .content .text{
+    color: white;
+    font-size: 18px;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+#product .product .content .text:not(:read-only){
+    color: var(--pink);
+}
+#product .product .actions{
+    display: flex;
+    margin: 0 -0.5rem;
+}
+.product .actions button{
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    transition: 0.4;
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--pink);
+    border-radius: 5px;
+}
+.product .actions button:hover{
+    color: var(--pink);
+     background-color: white;
+    transition: 0.6s;
+}
