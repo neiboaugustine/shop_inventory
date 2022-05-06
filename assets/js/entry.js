@@ -55,8 +55,12 @@
         removeProduct.innerHTML = "Delete";
         removeProduct.classList.add('removeProduct');
 
+
+        let editProduct = document.createElement('button');
+        editProduct.innerHTML = "Edit";
+        editProduct.classList.add('editProduct');
         // Add to DOM
-        products.append(productName, productBrand, productQuantity, productPrice, productDescription, removeProduct)
+        products.append(productName, productBrand, productQuantity, productPrice, productDescription, removeProduct, editProduct)
         productDetail.appendChild(products);
 
         removeProduct.addEventListener('click', ()=>{
@@ -69,15 +73,7 @@
             details.forEach(createProductElement);
         })
     }
-
-    // Delete function
     
-
-    // removeProduct.addEventListener('click', ()=>{
-    //   productDetail.removeChild(products);
-    // })
-
-
     details.forEach(createProductElement);
 
     form.onsubmit = (e) => {
