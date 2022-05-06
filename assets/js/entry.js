@@ -1,4 +1,4 @@
-// window.addEventListener('load', ()=>{
+
 
     //declaration of variables
     let form = document.getElementById('enter-product');
@@ -32,27 +32,51 @@
         return{name, brand, quantity, price, description};
     };
 
+
     let createProductElement = ({name, brand, quantity, price, description}) => {
 
         // create Elements
         let products = document.createElement('div');
-        let producName = document.createElement('h2');
+        products.classList.add('list-container');
+        let productName = document.createElement('h2');
         let productBrand = document.createElement('p');
         let productQuantity = document.createElement('p');
         let productPrice = document.createElement('p');
         let productDescription = document.createElement('p');
 
         // Fill the content
-        producName.innerText = 'Product name: ' + name;
+        productName.innerText = 'Product name: ' + name;
         productBrand.innerText = 'Product brand: ' + brand;
         productQuantity.innerText = 'Product quantity: ' + quantity;
         productPrice.innerText = 'Product price: ' + price;
-        productDescription = 'Product description: ' + description;
+        productDescription.innerText = 'Product description: ' + description;
+
+        let removeProduct = document.createElement('button');
+        removeProduct.innerHTML = "Delete";
+        removeProduct.classList.add('removeProduct');
 
         // Add to DOM
-        products.append(producName, productBrand, productQuantity, productPrice, productDescription)
+        products.append(productName, productBrand, productQuantity, productPrice, productDescription, removeProduct)
         productDetail.appendChild(products);
+
+        removeProduct.addEventListener('click', ()=>{
+            let itemToDelete = details.filter(item => item.name == name)[0];
+            details.splice(details.indexOf(itemToDelete), 1);
+            localStorage.setItem("details", JSON.stringify(details));
+            // productDetail.removeChild(products);
+            // document.querySelector('.list-container').remove();
+            document.querySelectorAll('.list-container').forEach(divEl => divEl.remove())
+            details.forEach(createProductElement);
+        })
     }
+
+    // Delete function
+    
+
+    // removeProduct.addEventListener('click', ()=>{
+    //   productDetail.removeChild(products);
+    // })
+
 
     details.forEach(createProductElement);
 
@@ -76,34 +100,3 @@
             descriptionInput.value ="";
     };
    
-    
-//     let detailForm = (e)=> {
-//         e.preventDefault();
-//         let addItem = ()=>{
-//             if(!name || !brand || !quantity || unitPrice || !description){
-//                 alert("enter all fields");
-//                 return;
-//             }
-    
-//             // array for details collected
-//             let detail = {
-//                 nName: name,
-//                 bBrand:brand,
-//                 qQuantity:quantity,
-//                 uUnitPrice:unitPrice,
-//                 dDescription:description
-//             }
-//             details.push(detail); //to add to the array of details
-//             document.querySelector('form').reset() //to clear the form for new entry   
-    
-//             console.warn('added', {details});
-//             let item = document.querySelector('#product p');
-//             item.textContent = '\n' + JSON.stringify(details, '\t',2);  
-//         }
-//         document.addEventListener('DOMContentLoaded', ()=>{
-//             submit.addEventListener('click', addItem);
-//         })
-    
-//     }
-
-// });
