@@ -73,7 +73,7 @@
             details.forEach(createProductElement);
         })
     }
-    
+
     details.forEach(createProductElement);
 
     form.onsubmit = (e) => {
