@@ -9,27 +9,29 @@
     <link rel="stylesheet" href="/assets/css/sales.css">
 </head>
 <body>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4"></div>
-            <div class="col-lg-4">
-                <h1 class="mx-auto">Make sales here</h1>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>select product</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                <input style="margin-top: 20px;" class="form-control" type="number">
-                <button style="margin-top: 20px;"  type="button" class="btn btn-dark">Sell</button>
-            </div>
-            <div class="col-lg-4">
-                <h3 style="text-align: center;">Total price</h3>
-                <p class="sale-price" style="text-align: center;"><b>price</b></p>
+    <form action="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <h1 class="mx-auto">Make sales here</h1>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>select product</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    <input style="margin-top: 20px;" placeholder="quantity" class=" quantity form-control" type="number">
+                    <button style="margin-top: 20px;"  type="button" class="btn btn-dark">Sell</button>
+                </div>
+                <div class="col-lg-4">
+                    <h3 style="text-align: center;">Total price</h3>
+                    <p class="sale-price" style="text-align: center;"><b>price</b></p>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
+   
     <script src="sales.js"></script>
 </body>
 </html>
