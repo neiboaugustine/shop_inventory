@@ -8,7 +8,7 @@
 JSON.parse(localStorage.details).forEach(product =>{
     options += "<option>" + product.name + "</option>";
 });
-
+ let itemArray = [];
 formSelect.innerHTML = options;
 
 sellButton.addEventListener('click', ()=>{
@@ -27,8 +27,12 @@ sellButton.addEventListener('click', ()=>{
         product,
         quantity
     }
-
-    salePrice.innerHTML = product + ': ' + quantity;
+    itemArray.push(itemTotal);
+    itemArray.forEach(item=>
+        {
+        salePrice.innerHTML += item.product +" : "+ item.quantity + "<br/>";
+    })
+   
 });
 
 

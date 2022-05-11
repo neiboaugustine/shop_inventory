@@ -63,6 +63,7 @@
         products.append(productName, productBrand, productQuantity, productPrice, productDescription, removeProduct, editProduct)
         productDetail.appendChild(products);
 
+        // remove item from the array
         removeProduct.addEventListener('click', ()=>{
             let itemToDelete = details.filter(item => item.name == name)[0];
             details.splice(details.indexOf(itemToDelete), 1);
