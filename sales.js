@@ -49,8 +49,14 @@ sellButton.addEventListener('click', ()=>{
 
     totalPrice = trueProduct.price*quantity;
     salePrice.innerHTML="₦"+totalPrice;
+
+    let productLeft = JSON.parse(localStorage.details).filter(qty=>{
+        return qty.quantity == quantity;
+    })
+    productLeft = productLeft[0];
     
-   
+    qtyLeft = productLeft-quantity;
+    alert(qtyLeft);
 });
 
 
