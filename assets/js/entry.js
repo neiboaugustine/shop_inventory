@@ -10,9 +10,6 @@
     let unitPrice = form['price']
     let descriptionInput = form['description']
 
-       
-    // let submit = document.getElementById('product-submit');
-
    
     // an array to hold details for each product
     let details = JSON.parse(localStorage.getItem("details")) || [];
